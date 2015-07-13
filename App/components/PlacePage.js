@@ -11,18 +11,27 @@ var {
 } = React;
 
 var CouponRow = require('./CouponRow.js')
-var UserRow = require('./UserRow.js')
-var AccountTab = require('./AccountTab.js')
+var PlaceRow = require('./PlaceRow.js')
+var PlaceInformation = require('./PlaceInformation.js')
+var PlaceClaimButton = require('./PlaceClaimButton.js')
 
 var PlacePage = React.createClass({
   render: function() {
     return (
       <View
       style={styles.page}>
-        <MapView style={styles.map}></MapView>
-        <UserRow name={'Brent Kirkland'} username={'brentkirkland'} amount={'144.10'}/>
-        <AccountTab tabName={'Mexican, American'}/>
-        <AccountTab tabName={'Click to Claim'}/>
+        <MapView style={styles.map}
+          pitchEnabled={false} scrollEnabled={false}
+          rotateEnabled={false}
+          region={{
+            latitude: 34.4133292,
+            longitude: -119.86097180000002,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01}}></MapView>
+        <PlaceRow placeName={this.props.placeName} percentage={this.props.percentage}/>
+        <PlaceInformation information={{left: 'Type', right: 'Mexican'}}/>
+        <PlaceInformation information={{left: 'Address', right: '956 Embarcadero, Isla Vista'}}/>
+        <PlaceClaimButton/>
       </View>
     );
   }

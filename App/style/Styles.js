@@ -7,7 +7,6 @@ module.exports = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#F6F7F7',
     justifyContent: 'center',
-
   },
   accountText: {
     fontSize: 14,
@@ -73,17 +72,63 @@ module.exports = StyleSheet.create({
   page: {
     marginTop: 64,
     flex: 1,
+    backgroundColor: '#F6F7F7'
   },
   place: {
     flex: 1,
     flexDirection: 'column',
+    justifyContent: 'center',
   },
   placeName: {
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'left',
     paddingLeft: 10,
-    paddingTop: 13,
+    color: '#263E56',
+  },
+  placeInformationRow: {
+    height: 45,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F6F7F7',
+    backgroundColor: '#fff'
+  },
+  placeInformationDetailRow: {
+    height: 45,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F6F7F7',
+    justifyContent: 'center',
+  },
+  placeInformationClaimButton: {
+    height: 45,
+    backgroundColor: '#263E56',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
+    borderRadius: 2,
+  },
+  placeInformationClaimButtonWrapper: {
+    backgroundColor: '#fff'
+  },
+  placeInformationClaimButtonText:{
+    fontSize: 14,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  placeInformationRowLeft:{
+    fontSize: 14,
+    textAlign: 'left',
+    paddingLeft: 10,
+    color: '#263E56',
+  },
+  placeInformationRowRight: {
+    fontSize: 14,
+    textAlign: 'right',
+    fontWeight: 'bold',
+    paddingRight: 10,
     color: '#263E56',
   },
   percent: {
