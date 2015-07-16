@@ -16,7 +16,7 @@ var PlaceClaimButton = React.createClass({
     return(
       <View style={styles.placeInformationClaimButtonWrapper}>
         <View style={styles.placeInformationClaimButton}>
-          <Text style={styles.placeInformationClaimButtonText}>Claim Rebate</Text>
+          <Text style={styles.placeInformationClaimButtonText}>Claim</Text>
         </View>
       </View>
     );

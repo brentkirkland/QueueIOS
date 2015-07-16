@@ -22,28 +22,48 @@ var CouponRow = React.createClass({
 
   render: function() {
     return(
-    <View style={styles.row}>
-      <TouchableOpacity onPress={() => this.props.navigator.push({
-          title: 'Place Profile',
-          component: PlacePage,
+      <View style={styles.row}>
+        <TouchableOpacity onPress={() =>
+            this.props.navigator.push(this.handlePush())}>
+          <View style={styles.place}>
+            <Text style={styles.placeName}>
+              {this.props.placeName}
+            </Text>
+            <Text style={styles.instructions}>
+              {this.configureUser()}
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <Percentage percentage={this.props.percentage}/>
+      </View>
+    );
+  },
+  handlePush: function(){
+    if (this.props.signedIn){
+      return (
+        {
+          name: 'PlacePage',
           passProps: {
             placeName: this.props.placeName,
             percentage: this.props.percentage,
           }
-        })}>
-        <View style={styles.place}>
-          <Text style={styles.placeName}>
-            {this.props.placeName}
-          </Text>
-          <Text style={styles.instructions}>
-            Tap to claim
-          </Text>
-        </View>
-      </TouchableOpacity>
-      <Percentage percentage={this.props.percentage}/>
-    </View>
-  );
-  }
+        }
+      );
+    } else {
+      return (
+        {
+          name: 'SignUpPage',
+        }
+      );
+    }
+  },
+  configureUser: function(){
+    if (this.props.signedIn){
+      return 'Tap to view';
+    } else {
+      return 'Sign up to claim';
+    }
+  },
 });
 
 module.exports = CouponRow;

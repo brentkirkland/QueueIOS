@@ -11,9 +11,9 @@ module.exports = StyleSheet.create({
   accountText: {
     fontSize: 14,
     textAlign: 'left',
-    fontWeight: 'bold',
+    fontWeight: '500',
     paddingLeft: 10,
-    color: '#263E56',
+    color: '#131414',
   },
   amount: {
     flex: 4,
@@ -26,8 +26,7 @@ module.exports = StyleSheet.create({
     alignItems: 'stretch'
   },
   cash: {
-    flex: .34,
-    textAlign: 'left',
+    width: 91.5,
     margin: 10,
     borderWidth: 1,
     borderColor: '#263E56',
@@ -57,10 +56,25 @@ module.exports = StyleSheet.create({
     fontSize: 9,
     textAlign: 'left',
     paddingLeft: 10,
-    color: '#263E56',
+    color: '#131414',
+  },
+  navBar: {
+    height: 40,
+    backgroundColor: '#263E56',
+    justifyContent: 'center',
+  },
+  navBarText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   map: {
     height: 200,
+  },
+  mapSpinner: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
   row: {
     height: 60,
@@ -70,7 +84,6 @@ module.exports = StyleSheet.create({
     flexDirection: 'row',
   },
   page: {
-    marginTop: 64,
     flex: 1,
     backgroundColor: '#F6F7F7'
   },
@@ -80,11 +93,11 @@ module.exports = StyleSheet.create({
     justifyContent: 'center',
   },
   placeName: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: 'bold',
     textAlign: 'left',
     paddingLeft: 10,
-    color: '#263E56',
+    color: '#131414',
   },
   placeInformationRow: {
     height: 45,
@@ -113,7 +126,7 @@ module.exports = StyleSheet.create({
     backgroundColor: '#fff'
   },
   placeInformationClaimButtonText:{
-    fontSize: 14,
+    fontSize: 16,
     textAlign: 'center',
     fontWeight: 'bold',
     color: '#fff',
@@ -127,13 +140,12 @@ module.exports = StyleSheet.create({
   placeInformationRowRight: {
     fontSize: 14,
     textAlign: 'right',
-    fontWeight: 'bold',
+    fontWeight: '500',
     paddingRight: 10,
     color: '#263E56',
   },
   percent: {
-    flex: .34,
-    textAlign: 'left',
+    width: 91.5,
     margin: 10,
     borderWidth: 1,
     borderColor: '#263E56',
@@ -158,9 +170,23 @@ module.exports = StyleSheet.create({
     marginRight: 10,
     color: '#263E56',
   },
+  space: {
+    height: 45,
+    backgroundColor: '#263E56',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   space2: {
     justifyContent: 'center',
     height: 30,
     backgroundColor: '#F6F7F7',
+  },
+  topBar:{
+    height: 24,
+    backgroundColor: '#263E56',
+  },
+  topBar2:{
+    height: 24,
+    backgroundColor: '#263E56',
   },
 });

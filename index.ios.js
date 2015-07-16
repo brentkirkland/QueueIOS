@@ -5,36 +5,40 @@
 'use strict';
 
 var React = require('react-native');
-var FrontPage = require('./App/components/FrontPage.js')
+var AppNavigator = require('./App/components/AppNavigator.js');
+var MainStore = require('./App/stores/MainStore.js');
+var Parse = require('parse').Parse;
+Parse.initialize("cRQxHQFx84ebmEN2sOic8e2cEDWDSKbi4kZHZ38i", "XpYVIvpt6Kuvs1luBjG0zFheMsr8mvi0NirxTvst");
+
+var Parse = require('parse').Parse;
+var ParseReact = require('parse-react');
+
 var {
   AppRegistry,
-  StyleSheet,
-  NavigatorIOS,
-  StatusBarIOS,
 } = React;
 
+function getState(){
+  return MainStore.getAll();
+}
+
 var QueueIOS = React.createClass({
+
+  getInitialState: function(){
+    return ({data: getState()});
+  },
+  componentDidMount: function() {
+    MainStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    MainStore.removeChangeListener(this._onChange);
+  },
   render: function() {
     return (
-      <NavigatorIOS
-        style={styles.nav}
-        titleTextColor={'#fff'}
-        barTintColor={'#001D39'}
-        translucent={false}
-        shadowHidden={true}
-        initialRoute={{
-          component: FrontPage,
-          title:'Queue',
-        }}
-      />
-    );
-  }
-});
-
-var styles = StyleSheet.create({
-  nav: {
-    flex: 1,
+      <AppNavigator data={this.state.data}/>
+      );
+  },
+  _onChange: function() {
+    getState();
   },
 });
-
 AppRegistry.registerComponent('QueueIOS', () => QueueIOS);
