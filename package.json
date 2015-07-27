@@ -8,11 +8,16 @@
   "dependencies": {
     "es6-promise": "^2.3.0",
     "events": "^1.0.2",
+    "lodash": "^3.10.0",
     "object-assign": "^3.0.0",
     "parse": "^1.5.0",
     "parse-react": "^0.4.2",
+    "pubnub": "^3.7.13",
+    "pusher": "^1.0.6",
     "react": "^0.13.3",
     "react-native": "^0.7.1",
+    "react-native-dashed-border": "^0.1.5",
+    "react-native-mapbox-gl": "^0.3.0",
     "react-timer-mixin": "^0.13.2"
   }
 }

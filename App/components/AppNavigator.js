@@ -21,11 +21,12 @@ var AppNavigator = React.createClass({
     switch (route.name) {
       case 'PlacePage':
         return <PlacePage navigator={nav}
-                placeName={route.passProps.placeName}
+                merchant={route.passProps.merchant}
                 percentage={route.passProps.percentage}
                 data={this.props.data}/>
       case 'SignUpPage':
-          return <SignUpPage navigator={nav}/>
+          return <SignUpPage navigator={nav}
+                  onBack={() => { console.log('pop called'); nav.pop(); }}/>
       default:
         return (
           <FrontPage navigator={nav}
@@ -50,7 +51,7 @@ var AppNavigator = React.createClass({
 var styles = StyleSheet.create({
   nav: {
     flex: 1,
-    backgroundColor: '#263E56',
+    backgroundColor: '#9AC1BF',
   },
 });
 

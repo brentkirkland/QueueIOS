@@ -4,9 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>GothamBold.ttf</string>
-		<string>GothamBook.ttf</string>
-		<string>GothamMedium.ttf</string>
+		<string>ProximaNova-Bold.otf</string>
+		<string>ProximaNova-Light.otf</string>
+		<string>ProximaNova-Regular.otf</string>
+		<string>ProximaNova-Semibold.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

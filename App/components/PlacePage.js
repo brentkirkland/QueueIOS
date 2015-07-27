@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var TimerMixin = require('react-timer-mixin');
+var MapboxGLMap = require('react-native-mapbox-gl');
 
 var {
   ActivityIndicatorIOS,
@@ -46,14 +47,22 @@ var PlacePage = React.createClass({
       );
     } else {
       return (
-        <MapView style={styles.map}
-          pitchEnabled={false} scrollEnabled={false}
-          rotateEnabled={false}
-          region={{
-            latitude: 34.4133292,
-            longitude: -119.86097180000002,
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01}}/>
+
+            <MapboxGLMap
+              style={styles.map}
+              direction={0}
+              rotateEnabled={true}
+              scrollEnabled={true}
+              zoomEnabled={true}
+              showsUserLocation={false}
+              attributionControl={false}
+              ref={'mapRef'}
+              accessToken={'pk.eyJ1IjoiYnJlbnRraXJrbGFuZCIsImEiOiJpMlgyVWg0In0.tpVmw3zomG2woo8kGoizSw'}
+              styleURL={'asset://styles/dark-v7.json'}
+              centerCoordinate={{
+                latitude: 34.4133292,
+                longitude: -119.86097180000002,}}
+              zoomLevel={14} />
       );
     }
   },
@@ -63,14 +72,17 @@ var PlacePage = React.createClass({
       style={styles.page}>
         <View style={styles.topBar}/>
         <View style={styles.navBar}>
-          <Text style={styles.navBarText}>{this.props.placeName}</Text>
+          <Text style={styles.navBarText}>{this.props.merchant.name}</Text>
+          {console.log('merchant name', this.props.merchant)}
         </View>
+        <View style={styles.blackdivider}></View>
         {this.displayMap()}
         <PlaceRow placeName={'Current Offer'} percentage={this.props.percentage}/>
-        <PlaceInformation information={{left: 'Type', right: 'Mexican'}}/>
-        <PlaceInformation information={{left: 'Address', right: '956 Embarcadero, Isla Vista'}}/>
-        <PlaceInformation information={{left: 'Phone', right: '(805) 420-6969'}}/>
-        <PlaceInformation information={{left: 'Today\'s Hours', right: '10:00 am - 10:00 pm'}}/>
+        <PlaceInformation information={{left: 'Type', right: this.props.merchant.type}}/>
+        <PlaceInformation information={{left: 'Address', right: this.props.merchant.address}}/>
+        <PlaceInformation information={{left: 'Phone', right: this.props.merchant.phone}}/>
+        <PlaceInformation information={{left: 'Today\'s Hours', right: this.props.merchant.hours}}/>
+        <View style={styles.scrollviewwrapper}></View>
         <PlaceClaimButton/>
       </View>
     );

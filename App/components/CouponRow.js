@@ -27,10 +27,10 @@ var CouponRow = React.createClass({
             this.props.navigator.push(this.handlePush())}>
           <View style={styles.place}>
             <Text style={styles.placeName}>
-              {this.props.placeName}
+              {this.props.merchant._serverData.name}
             </Text>
             <Text style={styles.instructions}>
-              {this.configureUser()}
+              {this.props.merchant._serverData.type}
             </Text>
           </View>
         </TouchableOpacity>
@@ -44,7 +44,7 @@ var CouponRow = React.createClass({
         {
           name: 'PlacePage',
           passProps: {
-            placeName: this.props.placeName,
+            merchant: this.props.merchant._serverData,
             percentage: this.props.percentage,
           }
         }

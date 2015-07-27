@@ -25,6 +25,22 @@
 		7E84A1160397C184840D6952 /* libPods-QueueIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459857E8C4227AE81307DB6A /* libPods-QueueIOS.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		C7DED53C1B55B4B300641644 /* FacebookLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DED53B1B55B4B300641644 /* FacebookLoginManager.m */; };
+		C7DED5631B58176A00641644 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7DED55F1B58175E00641644 /* ProximaNova-Bold.otf */; };
+		C7DED5641B58177200641644 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7DED5601B58175E00641644 /* ProximaNova-Light.otf */; };
+		C7DED5651B58177200641644 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7DED5611B58175E00641644 /* ProximaNova-Regular.otf */; };
+		C7DED5661B58177200641644 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7DED5621B58175E00641644 /* ProximaNova-Semibold.otf */; };
+		C7DED57A1B61E68200641644 /* libRCTMapboxGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED5771B61E65A00641644 /* libRCTMapboxGL.a */; };
+		C7DED57D1B61E6E300641644 /* MapboxGL.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7DED57B1B61E6E300641644 /* MapboxGL.bundle */; };
+		C7DED57E1B61E6E300641644 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7DED57C1B61E6E300641644 /* Settings.bundle */; };
+		C7DED5801B61E6F500641644 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED57F1B61E6F500641644 /* CoreTelephony.framework */; };
+		C7DED5821B61E6FC00641644 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED5811B61E6FC00641644 /* GLKit.framework */; };
+		C7DED5841B61E70400641644 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED5831B61E70400641644 /* ImageIO.framework */; };
+		C7DED5861B61E70D00641644 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED5851B61E70D00641644 /* MobileCoreServices.framework */; };
+		C7DED5881B61E71400641644 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED5871B61E71400641644 /* QuartzCore.framework */; };
+		C7DED58A1B61E71E00641644 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED5891B61E71E00641644 /* SystemConfiguration.framework */; };
+		C7DED58C1B61E72900641644 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED58B1B61E72900641644 /* libc++.dylib */; };
+		C7DED58E1B61E73300641644 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED58D1B61E73300641644 /* libsqlite3.dylib */; };
+		C7DED5901B61E73B00641644 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DED58F1B61E73B00641644 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +121,20 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		C7DED5761B61E65A00641644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7DED5711B61E65A00641644 /* RCTMapboxGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C5DBB3401AF2EF2B00E611A9;
+			remoteInfo = RCTMapboxGL;
+		};
+		C7DED5781B61E65A00641644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7DED5711B61E65A00641644 /* RCTMapboxGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C5DBB34B1AF2EF2B00E611A9;
+			remoteInfo = RCTMapboxGLTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +164,22 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		C7DED53A1B55B49700641644 /* FacebookLoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacebookLoginManager.h; sourceTree = "<group>"; };
 		C7DED53B1B55B4B300641644 /* FacebookLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLoginManager.m; sourceTree = "<group>"; };
+		C7DED55F1B58175E00641644 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		C7DED5601B58175E00641644 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		C7DED5611B58175E00641644 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		C7DED5621B58175E00641644 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		C7DED5711B61E65A00641644 /* RCTMapboxGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTMapboxGL.xcodeproj; path = "node_modules/react-native-mapbox-gl/RCTMapboxGL.xcodeproj"; sourceTree = "<group>"; };
+		C7DED57B1B61E6E300641644 /* MapboxGL.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MapboxGL.bundle; path = "node_modules/react-native-mapbox-gl/RCTMapboxGL/MapboxGL.bundle"; sourceTree = "<group>"; };
+		C7DED57C1B61E6E300641644 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "node_modules/react-native-mapbox-gl/RCTMapboxGL/Settings.bundle"; sourceTree = "<group>"; };
+		C7DED57F1B61E6F500641644 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		C7DED5811B61E6FC00641644 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		C7DED5831B61E70400641644 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		C7DED5851B61E70D00641644 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C7DED5871B61E71400641644 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C7DED5891B61E71E00641644 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C7DED58B1B61E72900641644 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		C7DED58D1B61E73300641644 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C7DED58F1B61E73B00641644 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +194,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DED5901B61E73B00641644 /* libz.dylib in Frameworks */,
+				C7DED58E1B61E73300641644 /* libsqlite3.dylib in Frameworks */,
+				C7DED58C1B61E72900641644 /* libc++.dylib in Frameworks */,
+				C7DED58A1B61E71E00641644 /* SystemConfiguration.framework in Frameworks */,
+				C7DED5881B61E71400641644 /* QuartzCore.framework in Frameworks */,
+				C7DED5861B61E70D00641644 /* MobileCoreServices.framework in Frameworks */,
+				C7DED5841B61E70400641644 /* ImageIO.framework in Frameworks */,
+				C7DED5821B61E6FC00641644 /* GLKit.framework in Frameworks */,
+				C7DED5801B61E6F500641644 /* CoreTelephony.framework in Frameworks */,
+				C7DED57A1B61E68200641644 /* libRCTMapboxGL.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -250,6 +306,7 @@
 		13B07FAE1A68108700A75B9A /* QueueIOS */ = {
 			isa = PBXGroup;
 			children = (
+				C7DED55E1B58174500641644 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -282,6 +339,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				C7DED5711B61E65A00641644 /* RCTMapboxGL.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -307,6 +365,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				C7DED57B1B61E6E300641644 /* MapboxGL.bundle */,
+				C7DED57C1B61E6E300641644 /* Settings.bundle */,
 				13B07FAE1A68108700A75B9A /* QueueIOS */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* QueueIOSTests */,
@@ -327,9 +387,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C7DED55E1B58174500641644 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C7DED55F1B58175E00641644 /* ProximaNova-Bold.otf */,
+				C7DED5601B58175E00641644 /* ProximaNova-Light.otf */,
+				C7DED5611B58175E00641644 /* ProximaNova-Regular.otf */,
+				C7DED5621B58175E00641644 /* ProximaNova-Semibold.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		C7DED5721B61E65A00641644 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7DED5771B61E65A00641644 /* libRCTMapboxGL.a */,
+				C7DED5791B61E65A00641644 /* RCTMapboxGLTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F4F15C1DB1BE828768C99C88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7DED58F1B61E73B00641644 /* libz.dylib */,
+				C7DED58D1B61E73300641644 /* libsqlite3.dylib */,
+				C7DED58B1B61E72900641644 /* libc++.dylib */,
+				C7DED5891B61E71E00641644 /* SystemConfiguration.framework */,
+				C7DED5871B61E71400641644 /* QuartzCore.framework */,
+				C7DED5851B61E70D00641644 /* MobileCoreServices.framework */,
+				C7DED5831B61E70400641644 /* ImageIO.framework */,
+				C7DED5811B61E6FC00641644 /* GLKit.framework */,
+				C7DED57F1B61E6F500641644 /* CoreTelephony.framework */,
 				459857E8C4227AE81307DB6A /* libPods-QueueIOS.a */,
 			);
 			name = Frameworks;
@@ -420,6 +509,10 @@
 				{
 					ProductGroup = 78C398B11ACF4ADC00677621 /* Products */;
 					ProjectRef = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
+				},
+				{
+					ProductGroup = C7DED5721B61E65A00641644 /* Products */;
+					ProjectRef = C7DED5711B61E65A00641644 /* RCTMapboxGL.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
@@ -525,6 +618,20 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		C7DED5771B61E65A00641644 /* libRCTMapboxGL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTMapboxGL.a;
+			remoteRef = C7DED5761B61E65A00641644 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C7DED5791B61E65A00641644 /* RCTMapboxGLTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RCTMapboxGLTests.xctest;
+			remoteRef = C7DED5781B61E65A00641644 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -539,9 +646,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DED57D1B61E6E300641644 /* MapboxGL.bundle in Resources */,
+				C7DED57E1B61E6E300641644 /* Settings.bundle in Resources */,
+				C7DED5641B58177200641644 /* ProximaNova-Light.otf in Resources */,
+				C7DED5651B58177200641644 /* ProximaNova-Regular.otf in Resources */,
+				C7DED5661B58177200641644 /* ProximaNova-Semibold.otf in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				C7DED5631B58176A00641644 /* ProximaNova-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
