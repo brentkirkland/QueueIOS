@@ -20,7 +20,7 @@ var PlaceRow = React.createClass({
     return(
     <View style={styles.row}>
         <View style={styles.place}>
-          <Text style={styles.placeName}>
+          <Text style={styles.currentOffer}>
             {this.props.placeName}
           </Text>
         </View>

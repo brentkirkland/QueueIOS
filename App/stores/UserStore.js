@@ -6,22 +6,35 @@ var AppConstants = require('../constants/AppConstants.js');
 
 var CHANGE_EVENT = 'change';
 
-var loginData = {};
+var account = {};
 
 function addBank(data){
-  loginData.bank = data;
+  account.bank = data;
   UserStore.emitChange();
 }
 
 function cancelBank(){
-  loginData = {};
+  account = {};
   UserStore.emitChange();
+}
+
+function claim(objectId){
+  console.log('objid', objectId);
+  account = {objectId: objectId, time: (new Date()).getTime()}
+  UserStore.emitChange();
+}
+
+function create(name, email, token, step){
+  account.name = name;
+  account.email = email;
+  account.token = token;
+  account.step = step;
 }
 
 var UserStore = assign({}, EventEmitter.prototype, {
 
   getAll: function() {
-    return loginData;
+    return account;
   },
   emitChange: function() {
     this.emit(CHANGE_EVENT);
@@ -34,11 +47,9 @@ var UserStore = assign({}, EventEmitter.prototype, {
   },
   dispatcherIndex: AppDispatcher.register(function(payload){
     switch(payload.action.actionType){
-      case AppConstants.SELECT_BANK:
-        addBank(payload.action.bank);
-        break;
-      case AppConstants.CANCEL_BANK:
-        cancelBank();
+      case AppConstants.CREATE_ACCOUNT:
+        create(payload.action.name, payload.action.email,
+          payload.action.token, payload.action.step);
         break;
     }
     return true;

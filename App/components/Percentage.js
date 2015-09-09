@@ -11,7 +11,7 @@ var {
   AppRegistry,
   Text,
   View,
-  StyleSheet
+  StyleSheet,
 } = React;
 
 var Percentage = React.createClass({

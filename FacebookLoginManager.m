@@ -16,7 +16,7 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(newSession:(RCTResponseSenderBlock)callback) {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions:@[@"public_profile"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [login logInWithReadPermissions:@[@"public_profile", @"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         
         if (error) {
             callback(@[@"Error", [NSNull null]]);
@@ -29,7 +29,6 @@ RCT_EXPORT_METHOD(newSession:(RCTResponseSenderBlock)callback) {
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
             [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
             NSString *expiration = [dateFormat stringFromDate:token.expirationDate];
-            NSLog(@"exp%@", expiration);
             NSDictionary *credentials = @{ @"token" : tokenString, @"userId" : userId, @"tokenExpirationDate" :  expiration};
             callback(@[[NSNull null], credentials]);
         }

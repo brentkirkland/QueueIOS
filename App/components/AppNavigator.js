@@ -7,8 +7,11 @@
 var React = require('react-native');
 var FrontPage = require('./FrontPage.js');
 var PlacePage = require('./PlacePage.js');
-var SignUpPage = require('./SignUpPage.js')
-
+var SignUpPage = require('./SignUpPage.js');
+var BankSelectPage = require('./BankSelectPage.js');
+var BankLoginPage = require('./BankLoginPage.js');
+var BankMFAPage = require('./BankMFAPage.js');
+var BankMFACodeSelectPage = require('./BankMFACodeSelectPage.js');
 var {
   StyleSheet,
   Navigator,
@@ -26,7 +29,27 @@ var AppNavigator = React.createClass({
                 data={this.props.data}/>
       case 'SignUpPage':
           return <SignUpPage navigator={nav}
-                  onBack={() => { console.log('pop called'); nav.pop(); }}/>
+                  onBack={() => { nav.pop(); }}
+                  data={this.props.data}/>
+      case 'BankSelectPage':
+          return <BankSelectPage navigator={nav}
+                  onBack={() => {nav.popToTop()}}/>
+      case 'BankLoginPage':
+          return <BankLoginPage navigator={nav}
+                  bank={route.bank}
+                  onBack={() => { nav.pop(); }}/>
+      case 'BankMFAPage':
+          return <BankMFAPage navigator={nav}
+                  bank={route.bank}
+                  onBack={() => { nav.pop(); }}
+                  question={route.question}
+                  accessToken={route.accessToken}/>
+      case 'BankMFACodeSelectPage':
+          return <BankMFACodeSelectPage navigator={nav}
+                  bank={route.bank}
+                  onBack={() => { nav.pop(); }}
+                  question={route.question}
+                  accessToken={route.accessToken}/>
       default:
         return (
           <FrontPage navigator={nav}
@@ -51,7 +74,7 @@ var AppNavigator = React.createClass({
 var styles = StyleSheet.create({
   nav: {
     flex: 1,
-    backgroundColor: '#9AC1BF',
+    backgroundColor: '#fbfbfb',
   },
 });
 

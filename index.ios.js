@@ -11,7 +11,6 @@ var Parse = require('parse').Parse;
 Parse.initialize("cRQxHQFx84ebmEN2sOic8e2cEDWDSKbi4kZHZ38i", "XpYVIvpt6Kuvs1luBjG0zFheMsr8mvi0NirxTvst");
 
 var Parse = require('parse').Parse;
-var ParseReact = require('parse-react');
 
 var {
   AppRegistry,
@@ -38,7 +37,7 @@ var QueueIOS = React.createClass({
       );
   },
   _onChange: function() {
-    getState();
+    this.setState({data: getState()});
   },
 });
 AppRegistry.registerComponent('QueueIOS', () => QueueIOS);

@@ -46,7 +46,7 @@
 
 //   jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
   
-  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
@@ -61,6 +61,7 @@
   [self.window.layer setMasksToBounds:YES];
   self.window.layer.opaque = NO;
   [self.window makeKeyAndVisible];
+  
   return [[FBSDKApplicationDelegate sharedInstance] application:application
                                   didFinishLaunchingWithOptions:launchOptions];
 }

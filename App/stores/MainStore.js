@@ -6,10 +6,10 @@ var UserStore= require('./UserStore.js')
 
 var CHANGE_EVENT = 'main';
 
-data = {'user': undefined};
+data = {};
 
 function gatherData(){
-  data.user = UserStore.getAll();
+  data.account = UserStore.getAll();
   MainStore.emitChange();
 }
 
@@ -19,7 +19,6 @@ var MainStore = assign({}, EventEmitter.prototype, {
     return data;
   },
   emitChange: function() {
-    console.log('hello');
     this.emit(CHANGE_EVENT);
   },
   addChangeListener: function(callback) {
@@ -27,7 +26,6 @@ var MainStore = assign({}, EventEmitter.prototype, {
     UserStore.addChangeListener(this._onChange);
   },
   removeChangeListener: function(callback) {
-    console.log('hello mommmmmm');
     this.removeListener(CHANGE_EVENT, callback);
     UserStore.removeListener(this._onChange);
   },

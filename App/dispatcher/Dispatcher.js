@@ -41,7 +41,6 @@ Dispatcher.prototype = assign({}, Dispatcher.prototype, {
         rejects[i](new Error('Dispatcher callback unsuccessful'));
       });
     });
-    console.log(payload)
     _promises = [];
   }
 });

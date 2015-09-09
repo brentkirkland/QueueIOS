@@ -19,7 +19,7 @@ var UserRow = React.createClass({
 
   render: function() {
     return(
-    <View style={styles.row2}>
+    <View style={styles.row3}>
       <View style={styles.place}>
         <Text style={styles.placeName}>
           {this.props.name}

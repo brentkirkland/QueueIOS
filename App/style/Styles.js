@@ -1,6 +1,20 @@
 var StyleSheet = require('StyleSheet');
 
 module.exports = StyleSheet.create({
+  aboutMerchant: {
+    height: 40,
+    justifyContent: 'center',
+    backgroundColor: '#fbfbfb',
+    flex: 1,
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E9E8EA',
+  },
+  aboutMerchantText: {
+    fontSize: 15,
+    marginLeft: 10,
+    marginTop: 10,
+    color: '#bcbec0',
+  },
   accountRow: {
     height: 45,
     backgroundColor: '#fff',
@@ -23,30 +37,56 @@ module.exports = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 6,
     marginRight: 10,
-    color: '#9AC1BF',
+    color: '#45d695',
     alignItems: 'stretch'
   },
-  blackdivider: {
-    height: 3,
-    backgroundColor: '#313838',
+  balance: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#313838',
+  },
+  balanceSign: {
+    marginTop: 1.35,
+    marginRight: 3,
+    fontSize: 18,
+    color: '#313838',
+  },
+  balanceView: {
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    paddingRight: 50,
+  },
+  bankImage: {
+    height: 90,
+    marginTop: 10,
   },
   cash: {
     width: 91.5,
     margin: 14,
     borderWidth: 1,
-    borderColor: '#9AC1BF',
+    borderColor: '#45d695',
     borderRadius: 2,
     flexDirection: 'row',
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fbfbfb'
   },
   container2: {
-    marginLeft: 3,
-    marginRight: 3,
     flex: 1,
-    backgroundColor: '#9AC1BF'
+    backgroundColor: '#fbfbfb'
+  },
+  container3: {
+    flex: 1,
+    backgroundColor: '#FFFFFF'
+  },
+  currentOffer: {
+    fontSize: 18,
+    textAlign: 'left',
+    fontWeight: 'bold',
+    paddingLeft: 10,
+    color: '#313838',
   },
   dollarSign: {
     flex: 1,
@@ -54,11 +94,11 @@ module.exports = StyleSheet.create({
     fontSize: 18,
     marginTop: 6,
     marginLeft: 10,
-    color: '#9AC1BF',
+    color: '#45d695',
   },
   greyendivider: {
-    height: 0.5,
-    backgroundColor: '#9AC1BF',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E9E8EA',
   },
   header: {
     fontSize: 12,
@@ -68,23 +108,52 @@ module.exports = StyleSheet.create({
     marginTop: 10,
     color: '#1C2D3A',
   },
+  icon: {
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  icon2: {
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  icon3: {
+    marginLeft: 10,
+    marginRight: 20,
+  },
   instructions: {
     fontSize: 15,
     textAlign: 'left',
     paddingLeft: 10,
-    color: '#9AC1BF',
+    color: '#bcbec0',
+  },
+  loginBarButton:{
+    width: 50,
+    height: 45,
+    paddingRight: 10,
+    paddingTop: 14,
+    fontSize: 15,
+    color: '#45d695'
   },
   navBar: {
-    height: 40,
+    height: 30,
     justifyContent: 'center',
-    borderBottomWidth: 0.25,
-    borderBottomColor: '#BBBCBC',
+    alignItems: 'center',
+    backgroundColor: '#fbfbfb',
   },
   navBarText: {
-    color: '#fff',
-    fontSize: 19,
+    color: '#313838',
+    fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
+    flex: 1,
+  },
+  navBarText2: {
+    color: '#313838',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    flex: 1,
+    marginLeft: 30,
   },
   map: {
     height: 200,
@@ -93,6 +162,21 @@ module.exports = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     backgroundColor: '#fff'
+  },
+  MFAQuestion: {
+    flex: 1,
+    fontSize: 15,
+    fontWeight: 'bold',
+    backgroundColor: '#fff',
+    marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  MFAQuestionWrapper: {
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    flex: 1,
+    flexDirection: 'column',
   },
   row: {
     height: 64,
@@ -110,15 +194,50 @@ module.exports = StyleSheet.create({
     borderTopColor: '#E9E8EA',
     flexDirection: 'row',
   },
+  row3: {
+    height: 64,
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+  },
   page: {
     flex: 1,
-    marginLeft: 3,
-    marginRight: 3,
+  },
+  percentageTop: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 300,
+    backgroundColor: '#fff',
+  },
+  percentageTopNumber: {
+    fontSize: 48,
+    fontWeight: '500',
+  },
+  percentageTopSign: {
+    marginLeft: 5,
+    fontSize: 48,
+    fontWeight: '200',
   },
   place: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
+  },
+  placeBox: {
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    padding: 10,
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E9E8EA',
+  },
+  placeBoxTitle: {
+    color: '#313838',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  placeBoxInfo: {
+    color: '#bcbec0',
+    fontSize: 15,
   },
   placeName: {
     fontSize: 19,
@@ -144,41 +263,45 @@ module.exports = StyleSheet.create({
   },
   placeInformationClaimButton: {
     flex: 1,
-    backgroundColor: '#313838',
+    borderWidth: 1,
+    borderColor: '#45d695',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10,
+    marginTop: 10,
+    marginBottom: 10,
+    marginRight: 10,
+    marginLeft: 10,
     borderRadius: 2,
   },
   placeInformationClaimButtonWrapper: {
-    height: 64,
+    height: 65,
     backgroundColor: '#fff',
-    borderTopWidth: 1,
-    borderTopColor: '#9AC1BF',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E9E8EA',
   },
   placeInformationClaimButtonText:{
     fontSize: 18,
     textAlign: 'center',
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#45d695',
   },
   placeInformationRowLeft:{
     fontSize: 14,
     textAlign: 'left',
     paddingLeft: 10,
-    color: '#9AC1BF',
+    color: '#45d695',
   },
   placeInformationRowRight: {
     fontSize: 14,
     textAlign: 'right',
-    fontWeight: '500',
+    fontWeight: 'bold',
     paddingRight: 10,
     color: '#313838',
   },
   percent: {
     width: 91.5,
     margin: 14,
-    backgroundColor: '#313838',
+    backgroundColor: '#45d695',
     borderRadius: 2,
     flexDirection: 'row',
   },
@@ -200,11 +323,98 @@ module.exports = StyleSheet.create({
     marginRight: 10,
     color: '#fff',
   },
-  space: {
-    height: 45,
-    backgroundColor: '#9AC1BF',
+  signUpLanding: {
+    backgroundColor: '#fbfbfb',
+  },
+  signUpInfo: {
+    paddingTop: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontWeight: 'bold',
+    fontSize: 12,
+    color: '#bcbec0',
+    backgroundColor: '#fff',
+    textAlign: 'center',
+  },
+  signUpTextView: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: '#fff'
+
+  },
+  signUpTextOr: {
+    marginTop: 2,
+    marginBottom: 12,
+  },
+  signUpText: {
+    color: '#45d695',
+    marginTop: 2,
+    marginBottom: 12,
+  },
+  signUpTextField: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingLeft: 10,
+    borderWidth: 0.25,
+    borderColor: '#bcbec0',
+    marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    borderRadius: 2,
+  },
+  signUpTextFieldWrapper: {
+    height: 55,
+    backgroundColor: '#fff',
+  },
+  signUpButtonWrapper: {
+    height: 55,
+    backgroundColor: '#fff',
+  },
+  signUpButtonButton: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#45d695',
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    marginRight: 10,
+    marginLeft: 10,
+    borderRadius: 2,
+  },
+  signUpOr: {
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  signUpOrText: {
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontWeight: 'bold',
+    fontSize: 12,
+    color: '#bcbec0',
+    backgroundColor: '#fff',
+    textAlign: 'center',
+  },
+  signUpOrDivider: {
+    flex: 1,
+    height: 10,
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E9E8EA',
+  },
+  space: {
+    flexDirection: 'row',
+    height: 45,
+    backgroundColor: '#fbfbfb',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E9E8EA',
   },
   space2: {
     justifyContent: 'center',
@@ -213,15 +423,22 @@ module.exports = StyleSheet.create({
     borderBottomWidth: 0.25,
     borderBottomColor: '#1C2D3A'
   },
+  spacer: {
+    flex: 1,
+    height: 10,
+    backgroundColor: '#fff',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E9E8EA',
+  },
   scrollviewwrapper: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fbfbfb',
   },
   topBar:{
     marginTop: 24,
   },
   topBar2:{
     height: 24,
-    backgroundColor: '#9AC1BF',
+    backgroundColor: '#fbfbfb',
   },
 });

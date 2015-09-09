@@ -19,11 +19,13 @@ var {
   Text,
   View,
   TouchableHighlight,
+  TouchableOpacity,
   Image,
 } = React;
 
 var CouponRow = require('./CouponRow.js');
 var UserRow = require('./UserRow.js');
+var SignUpRow = require('./SignUpRow.js');
 var AccountTab = require('./AccountTab.js');
 var PlacePage = require('./PlacePage.js');
 
@@ -39,13 +41,13 @@ var FrontPage = React.createClass({
       time: 0,
       startTime: (new Date()).getTime(),
       merchants: [],
+      signedIn: false,
     };
   },
   query: function(){
     var query = (new Parse.Query('merchant')).ascending('createdAt');
     var x = query.find({
       success: function(results) {
-        console.log('results', results)
         return fp.setState({merchants: results});
       },
       error: function(error) {
@@ -57,8 +59,9 @@ var FrontPage = React.createClass({
     //this.startPusher();
     this.timer();
   },
-  startPusher: function(){
-
+  componentWillUnmount: function(){
+    //this.clearInterval();
+    //stop timer somehow
   },
   timer: function() {
     this.setInterval(
@@ -69,11 +72,27 @@ var FrontPage = React.createClass({
   },
   mapMerchants: function(){
      return this.state.merchants.map(function(merchant) {
-       return <CouponRow merchant={merchant} percentage={fp.calculate(merchant._serverData)} navigator={fp.props.navigator} key={merchant._serverData.name} signedIn={true}/>
+       return <CouponRow merchant={merchant}
+               percentage={fp.calculate(merchant._serverData, fp.props.data, merchant)}
+               navigator={fp.props.navigator}
+               key={merchant._serverData.name}
+               signedIn={fp.state.signedIn}/>;
      })
   },
-  calculate: function(merchant) {
-    var x = merchant.minprice + ((merchant.maxprice - merchant.minprice)/merchant.timeframe) * ((this.state.time - this.state.startTime)/1000);
+  calculate: function(merchant, data, object) {
+    var x;
+    if (data.user !== undefined) {
+      console.log('merchantId', object.id)
+      if (data.user.objectId === object.id){
+        //this.setState({startTimeTwo: 0});
+        x = merchant.minprice + ((merchant.maxprice - merchant.minprice)/merchant.timeframe) * ((this.state.time - data.user.time)/1000);
+      } else {
+        x = merchant.minprice + ((merchant.maxprice - merchant.minprice)/merchant.timeframe) * ((this.state.time - this.state.startTime)/1000);
+      }
+    } else {
+      //console.log(data.user.objectId)
+      x = merchant.minprice + ((merchant.maxprice - merchant.minprice)/merchant.timeframe) * ((this.state.time - this.state.startTime)/1000);
+    }
     if (x > merchant.maxprice) {
       x = merchant.maxprice;
     }
@@ -83,29 +102,41 @@ var FrontPage = React.createClass({
     }
     return
   },
+  renderBottom: function(){
+    if (!this.state.signedIn){
+      return <SignUpRow name={'Facebook'} username={'brentkirkland'} amount={'1.50'} navigator={fp.props.navigator}/>;
+    } else {
+      return
+    }
+  },
   render: function() {
     var merchants = this.mapMerchants();
     return (
       <View style={styles.container2}>
         <View style={styles.topBar2}/>
-          <View style={styles.space}>
-            <Image
-              style={styles.icon}
-              source={require('image!queueskinny')}
-            />
-          </View>
-          <View style={styles.blackdivider}></View>
         <View style={styles.scrollviewwrapper}>
         <ScrollView
           automaticallyAdjustContentInsets={false}
-          style={styles.container}>
-
+          style={styles.container}
+          stickyHeaderIndices={[0]}>
+          <View style={styles.space}>
+            <TouchableOpacity>
+            <Image
+            style={styles.icon}
+            source={require('image!profileicon')}
+            />
+            </TouchableOpacity>
+          <View style={styles.balanceView}>
+            <Text style={styles.balanceSign}>$</Text>
+            <Text style={styles.balance}>24.54</Text>
+          </View>
+          </View>
         {merchants}
 
       </ScrollView>
       </View>
       <View style={styles.greyendivider}></View>
-      <UserRow name={'Brent Kirkland'} username={'brentkirkland'} amount={'1.25'}/>
+      {this.renderBottom()}
       </View>
     );
   }
