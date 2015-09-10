@@ -16,9 +16,11 @@ var {
   Text,
   View,
   TouchableOpacity,
-  Image,
+  PickerIOS,
   TextInput,
 } = React;
+
+var PickerItemIOS = PickerIOS.Item;
 
 var ReactART = require('ReactNativeART');
 var {
@@ -35,22 +37,22 @@ var BankLoginPage = React.createClass({
 
   getInitialState: function(){
     if (this.props.bank === 'American Express') {
-      return {color: '#0072ce', type: 'amex', data: getBankStuff()}
+      return {color: '#0072ce', type: 'amex', data: getBankStuff(), selectedValue: 'Select', index: 0}
     }
     else if (this.props.bank === 'Bank of America') {
-      return {color: '#e21d36', type: 'bofa', data: getBankStuff()}
+      return {color: '#e21d36', type: 'bofa', data: getBankStuff(), selectedValue: 'Select', index: 0}
     }
     else if (this.props.bank === 'Chase') {
-      return {color: '#005CB9', type: 'chase', data: getBankStuff()}
+      return {color: '#005CB9', type: 'chase', data: getBankStuff(), selectedValue: 'Select', index: 0}
     }
     else if (this.props.bank === 'Citi') {
-      return {color: '#004784', type: 'citi', data: getBankStuff()}
+      return {color: '#004784', type: 'citi', data: getBankStuff(), selectedValue: 'Select', index: 0}
     }
     else if (this.props.bank === 'US Bank') {
-      return {color: '#0E5292', type: 'us', data: getBankStuff()}
+      return {color: '#0E5292', type: 'us', data: getBankStuff(), selectedValue: 'Select', index: 0}
     }
     else {
-      return {color: '#CD1141', type: 'wells', data: getBankStuff()}
+      return {color: '#CD1141', type: 'wells', data: getBankStuff(), selectedValue: 'Select', index: 0}
     }
   },
   componentDidMount: function() {
@@ -111,8 +113,8 @@ var BankLoginPage = React.createClass({
       );
     }
   },
-  submitAnswer: function(){
-    BankActions.handleSecurityQuestion(this.state.answer, this.props.bank, this.props.accessToken, this.props.navigator)
+  sendMethod: function(method){
+    BankActions.sendMethod(method, this.props.bank, this.props.accessToken, this.props.navigator);
   },
   render: function() {
     return (
@@ -145,43 +147,39 @@ var BankLoginPage = React.createClass({
               color: '#bcbec0',
               backgroundColor: '#fff',
               textAlign: 'center',
-            }}>{'Security code required.'}</Text>
+            }}>{'Security code required. Please select a code send method.'}</Text>
 
             </View>
         <View style={styles.signUpLanding}>
 
           <View style={styles.MFAQuestionWrapper}>
-          <Text style={styles.MFAQuestion}>Select how you would like to recieve your security code.</Text>
           </View>
-
-          <View style={styles.signUpTextFieldWrapper}>
-              <TextInput style={styles.signUpTextField}
-                         placeholder={'Security Answer'}
-                         secureTextEntry={true}
-                         autoCorrect={false}
-                         onChangeText={(text) => this.setState({answer: text})}/>
+          {console.log('list props', this.props.list)}
+          <View>
+              {Object.keys(this.props.list).map((option) => (
+                <View style={styles.signUpButtonWrapper} key={option}>
+                    <TouchableOpacity style={{
+                      flex: 1,
+                      backgroundColor: this.state.color,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginTop: 10,
+                      marginRight: 10,
+                      marginLeft: 10,
+                      borderRadius: 2,
+                      }}
+                      onPress={() => this.sendMethod(this.props.list[option])}>
+                        <Text style={{
+                          fontSize: 18,
+                          textAlign: 'center',
+                          fontWeight: 'bold',
+                          color: 'white',
+                        }}>{this.props.list[option].mask}</Text>
+                    </TouchableOpacity>
+                </View>
+              )
+            )}
           </View>
-
-        <View style={styles.signUpButtonWrapper}>
-            <TouchableOpacity style={{
-              flex: 1,
-              backgroundColor: this.state.color,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginTop: 10,
-              marginRight: 10,
-              marginLeft: 10,
-              borderRadius: 2,
-              }}
-              onPress={() => this.submitAnswer()}>
-                <Text style={{
-                  fontSize: 18,
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  color: 'white',
-                }}>Submit</Text>
-            </TouchableOpacity>
-        </View>
 
         </View>
       </View>

@@ -31,7 +31,7 @@ function getBankStuff(){
   return BankStore.getAll();
 }
 
-var BankMFAPage = React.createClass({
+var BankMFACodeEntryPage = React.createClass({
 
   getInitialState: function(){
     if (this.props.bank === 'American Express') {
@@ -111,8 +111,8 @@ var BankMFAPage = React.createClass({
       );
     }
   },
-  submitAnswer: function(){
-    BankActions.handleSecurityQuestion(this.state.answer, this.props.bank, this.props.accessToken, this.props.navigator)
+  submitCode: function(){
+    BankActions.handleSecurityQuestion(this.state.answer, this.props.bank, this.props.accessToken, this.props.navigator);
   },
   render: function() {
     return (
@@ -145,18 +145,19 @@ var BankMFAPage = React.createClass({
               color: '#bcbec0',
               backgroundColor: '#fff',
               textAlign: 'center',
-            }}>{'Please answer the following security question.'}</Text>
+            }}>{'Security code required.'}</Text>
 
             </View>
         <View style={styles.signUpLanding}>
 
           <View style={styles.MFAQuestionWrapper}>
-          <Text style={styles.MFAQuestion}>{this.props.question}</Text>
+          <Text style={styles.MFAQuestion}>{'Please enter the security code that was sent to ' + this.props.method.mask + '.'}</Text>
           </View>
 
           <View style={styles.signUpTextFieldWrapper}>
               <TextInput style={styles.signUpTextField}
-                         placeholder={'Security Answer'}
+                         placeholder={'Security Code'}
+                         keyboardType={'numeric'}
                          secureTextEntry={false}
                          autoCorrect={false}
                          onChangeText={(text) => this.setState({answer: text})}/>
@@ -173,7 +174,7 @@ var BankMFAPage = React.createClass({
               marginLeft: 10,
               borderRadius: 2,
               }}
-              onPress={() => this.submitAnswer()}>
+              onPress={() => this.submitCode()}>
                 <Text style={{
                   fontSize: 18,
                   textAlign: 'center',
@@ -203,4 +204,4 @@ var WELLSFARGO = "M65.4,53.2V52h0.2c0.9,0,1.3-0.1,1.3-1l0-6.1c0-0.9-0.4-1-1.3-1h
 var WELLSFARGOBOX = "M91.5,91.2H20.2V20.4h71.3V91.2z"
 
 var XICON = "M9.8,11.7c0.1-0.1,0.3-0.1,0.5,0l8.2,8.2c0.1,0.1,0.3,0.1,0.5,0l1-1c0.1-0.1,0.1-0.3,0-0.5l-8.2-8.2c-0.1-0.1-0.1-0.3,0-0.5 l8.2-8.2c0.1-0.1,0.1-0.3,0-0.5l-1-1c-0.1-0.1-0.3-0.1-0.5,0l-8.2,8.2c-0.1,0.1-0.3,0.1-0.5,0L1.5,0.1C1.4,0,1.2,0,1.1,0.1l-1,1 C0,1.2,0,1.4,0.1,1.5l8.2,8.2c0.1,0.1,0.1,0.3,0,0.5l-8.2,8.2c-0.1,0.1-0.1,0.3,0,0.5l1,1c0.1,0.1,0.3,0.1,0.5,0L9.8,11.7z"
-module.exports = BankMFAPage;
+module.exports = BankMFACodeEntryPage;

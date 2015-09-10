@@ -34,10 +34,16 @@ var BankActions = {
         });
 
         if (data.type === 'list') {
+
+          if (data.mfa.length === 1) {
+            this.handleSecurityQuestion(data.mfa[0], bank, data.access_token, nav);
+          } else {
+
           nav.push({name: 'BankMFACodeSelectPage',
                     bank: BankActions.unabreviate(bank),
-                    question: data.mfa[0].question,
+                    list: data.mfa,
                     accessToken: data.access_token});
+          }
         }
         else if (data.type === 'questions') {
           nav.push({name: 'BankMFAPage',
@@ -86,6 +92,31 @@ var BankActions = {
         //             question: data.mfa[0].question,
         //             accessToken: data.access_token});
         // }
+      }).catch(function(error) {
+        console.log('request failed', error)
+      })
+  },
+  sendMethod: function(method, bank, accessToken, nav){
+    fetch('https://tartan.plaid.com/connect/step?client_id='
+	    + client_id + '&secret=' + secret
+	    + '&access_token=' + accessToken
+      + '&options={"send_method":{"type":"' + method.type + '"}}', {method: 'post'})
+      .then(function(response) {
+        var data = JSON.parse(response._bodyText);
+        if (response.status === 201) {
+          // if (data.type === 'questions') {
+            nav.push({name: 'BankMFACodeEntryPage',
+                      bank: bank,
+                      method: method,
+                      accessToken: accessToken});
+          // }
+          console.log('goog!')
+        }
+        else if (!(response.status >= 200 && response.status < 300)){
+          var error = new Error(response.statusText)
+          error.response = response
+          throw error
+        }
       }).catch(function(error) {
         console.log('request failed', error)
       })

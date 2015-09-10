@@ -12,6 +12,8 @@ var BankSelectPage = require('./BankSelectPage.js');
 var BankLoginPage = require('./BankLoginPage.js');
 var BankMFAPage = require('./BankMFAPage.js');
 var BankMFACodeSelectPage = require('./BankMFACodeSelectPage.js');
+var BankMFACodeEntryPage = require('./BankMFACodeEntryPage.js');
+
 var {
   StyleSheet,
   Navigator,
@@ -48,7 +50,13 @@ var AppNavigator = React.createClass({
           return <BankMFACodeSelectPage navigator={nav}
                   bank={route.bank}
                   onBack={() => { nav.pop(); }}
-                  question={route.question}
+                  list={route.list}
+                  accessToken={route.accessToken}/>
+                case 'BankMFACodeEntryPage':
+          return <BankMFACodeEntryPage navigator={nav}
+                  bank={route.bank}
+                  onBack={() => { nav.pop(); }}
+                  method={route.method}
                   accessToken={route.accessToken}/>
       default:
         return (
